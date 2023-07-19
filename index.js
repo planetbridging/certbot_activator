@@ -42,9 +42,9 @@ const app = express();
     httpsServer.listen(PORThttps, () => {
       console.log("HTTPS Server running on port ", PORThttps);
     });
+  } else {
+    httpServer.listen(PORThttp, () => {
+      console.log("HTTP Server running on port ", PORThttp);
+    });
   }
-
-  httpServer.listen(PORThttp, () => {
-    console.log("HTTP Server running on port ", PORThttp);
-  });
 })();
