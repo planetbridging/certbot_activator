@@ -14,7 +14,7 @@ const app = express();
   console.log("HTTPS Enabled:", isHttpsEnabled);
   console.log("Server is running on port:", PORThttp);
 
-  app.use(express.static("public"), { dotfiles: "allow" });
+  app.use(express.static("public", { dotfiles: "allow" }));
 
   app.use((req, res) => {
     res.send("Hello there !");
