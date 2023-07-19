@@ -63,7 +63,14 @@ chain=/etc/letsencrypt/live/yourdomain.com/chain.pem
   docker-compose up
 ```
 
-5. Test https
+5. Press enter on the other terminal
+
+---
+
+Press Enter to Continue
+Successfully received certificate.
+
+6. Test https
 
 ```shell
 PROTOCOL=https
@@ -72,4 +79,16 @@ PORThttps=8078
 privkey=/etc/letsencrypt/live/yourdomain.com/privkey.pem
 cert=/etc/letsencrypt/live/yourdomain.com/cert.pem
 chain=/etc/letsencrypt/live/yourdomain.com/chain.pem
+```
+
+7. Repeat refreshing by opening crontab
+
+```shell
+crontab -e
+```
+
+8. Add the following so it runs everyday at 2am
+
+```shell
+0 2 * * * certbot renew --quiet
 ```
